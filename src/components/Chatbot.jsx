@@ -39,7 +39,17 @@ export default function Chatbot() {
 
       {isOpen && (
         <div id="chatWin" className="chatbot-window" style={{ display: 'flex' }}>
-          <div className="chatbot-header">PaintHub Assistant</div>
+          <div className="chatbot-header">
+            <span>PaintHub Assistant</span>
+            <button
+              type="button"
+              className="chatbot-close"
+              aria-label="Close chatbot"
+              onClick={() => setIsOpen(false)}
+            >
+              ×
+            </button>
+          </div>
           <div id="chatBody" className="chatbot-body">
             {messages.map((message, index) => (
               <div key={`${message.who}-${index}`} style={{ margin: 6, textAlign: message.who === 'you' ? 'right' : 'left' }}>
